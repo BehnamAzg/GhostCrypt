@@ -1,0 +1,32 @@
+---
+import Button from "./Button.astro";
+import Icon from "./Icon.astro";
+import IconButton from "./IconButton.astro";
+---
+
+<fieldset class="fieldset w-full">
+  <div class="flex justify-between text-xs w-full">
+    <label for="input" class="label w-fit font-bold"> Passphrase: </label>
+    <!-- Warning -->
+    <div class="badge badge-warning rounded-sm text-xs px-2 gap-x-1.5">
+      <Icon icon="warning" size="14" />
+      <span class="w-fit">Need 5 Passphrase Words</span>
+    </div>
+  </div>
+  <div class="join" id="passphrase">
+    <input type="text" name="passphrase-1" class="join-item input" />
+    <input type="text" name="passphrase-2" class="join-item input" />
+    <input type="text" name="passphrase-3" class="join-item input" />
+    <input type="text" name="passphrase-4" class="join-item input" />
+    <input type="text" name="passphrase-5" class="join-item input" />
+  </div>
+  <!-- Button Group -->
+  <div class="flex justify-between w-full gap-x-1.5">
+    <Button icon="generate" text="Generate Passphrase" id="generate" />
+    <div class="flex w-fit gap-x-1.5">
+      <IconButton icon="clear" text="Clear" id="clear" />
+      <IconButton icon="copy" text="Copy" id="copy" />
+      <IconButton icon="paste" text="Paste" id="paste" />
+    </div>
+  </div>
+</fieldset>

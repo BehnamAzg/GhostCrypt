@@ -1,0 +1,27 @@
+---
+import Icon from "./Icon.astro";
+import IconButton from "./IconButton.astro";
+
+const { label } = Astro.props;
+---
+
+<fieldset class="fieldset w-full">
+  <div class="flex justify-between text-xs w-full">
+    <label for="output" class="label w-fit font-bold"> Output: </label>
+    <!-- Message -->
+    <div class="badge badge-success rounded-sm text-xs px-2">
+      <span class="w-fit">Copied</span>
+    </div>
+  </div>
+  <!-- Textarea -->
+  <textarea id="output" name="output" class="textarea w-full text-xs" readonly>
+  This text cannot be edited.
+  You can select and copy it though.
+  Multi-line content works perfectly.
+  </textarea>
+  <!-- Button Group -->
+  <div class="flex justify-end w-full gap-x-1.5">
+    <IconButton icon="copy" text="Copy" id="copy" />
+    <IconButton icon="share" text="Share" id="share" />
+  </div>
+</fieldset>

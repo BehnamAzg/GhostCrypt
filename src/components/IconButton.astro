@@ -1,0 +1,10 @@
+---
+import Icon from "./Icon.astro";
+
+const { text = "", icon = "", size = "16", id = "", btnClass } = Astro.props;
+---
+<div class="tooltip text-xs" data-tip={text}>
+  <button class=`btn btn-sm btn-square ${btnClass}` id={id}>
+    {icon && <Icon icon={icon} size={size} />}
+  </button>
+</div>

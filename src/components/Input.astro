@@ -1,0 +1,25 @@
+---
+import Icon from "./Icon.astro";
+import IconButton from "./IconButton.astro";
+
+const { label } = Astro.props;
+---
+
+<fieldset class="fieldset w-full">
+  <div class="flex justify-between text-xs w-full">
+    <label for="input" class="label w-fit font-bold"> Write Your Message: </label>
+    <!-- Message -->
+    <div class="badge badge-soft badge-secondary rounded-sm text-xs px-2">
+      <span class="w-fit">Limit: 0 / 160 Characters</span>
+    </div>
+    
+  </div>
+  <!-- Textarea -->
+  <textarea id="input" name="input" class="textarea w-full text-xs" placeholder="Your Message..."></textarea>
+  <!-- Button Group -->
+  <div class="flex justify-end w-full gap-x-1.5">
+    <IconButton icon="clear" text="Clear" id="clear" />
+    <IconButton icon="copy" text="Copy" id="copy" />
+    <IconButton icon="paste" text="Paste" id="paste" />
+  </div>
+</fieldset>

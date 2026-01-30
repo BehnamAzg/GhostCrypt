@@ -1,0 +1,10 @@
+---
+import Icon from "./Icon.astro";
+
+const { text = "", icon = "", size = "14", id = "", btnClass } = Astro.props;
+---
+
+<button class=`btn btn-sm ${btnClass}` id={id}>
+  {icon && <Icon icon={icon} size={size} />}
+  {text}
+</button>
