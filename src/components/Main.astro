@@ -7,11 +7,13 @@ import Passphrase from "./Passphrase.astro";
 import Tabs from "./Tabs.astro";
 ---
 
-<main class="max-w-sm max-sm:w-full h-screen flex-center flex-col mx-auto gap-4 max-sm:p-8 select-none relative">
+<main class="max-w-sm max-sm:w-full h-screen flex-center flex-col justify-between mx-auto gap-4 py-8 max-sm:p-8 select-none relative">
   <Header />
-  <Input />
-  <OutputSettings />
-  <Passphrase />
-  <Output />
+  <div class="w-full h-auto flex-col gap-8">
+    <Input />
+    <OutputSettings />
+    <Passphrase />
+    <Output />
+  </div>
   <Tabs />
 </main>

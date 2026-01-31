@@ -1,5 +1,9 @@
-<div class="tabs tabs-sm tabs-box">
-  <input type="radio" name="pageTabs" class="tab" aria-label="Menu" />
-  <input type="radio" name="pageTabs" class="tab" aria-label="En/De" checked="checked" />
-  <input type="radio" name="pageTabs" class="tab" aria-label="Chat" />
+---
+import Tab from "./Tab.astro";
+---
+
+<div role="tablist" class="tabs tabs-box rounded-full">
+  <Tab icon="settings" text="Settings" />
+  <Tab icon="home" text="Home" tabClass="tab-active bg-accent" />
+  <Tab icon="chat" text="Direct Chat" />
 </div>
