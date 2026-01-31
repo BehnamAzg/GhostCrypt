@@ -1,19 +1,18 @@
-<header>
-  <div class="navbar bg-base-200 max-h-8">
-    <div class="flex-none">
-      <button class="btn btn-square btn-ghost">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-5 w-5 stroke-current"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg>
-      </button>
-    </div>
-    <div class="flex-1">
-      <a class="btn btn-ghost text-xl">GhostCrypt</a>
-    </div>
-    <div class="flex-none">
-      <button class="btn btn-square btn-ghost">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-5 w-5 stroke-current">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
-        </svg>
-      </button>
-    </div>
+---
+import Icon from "./Icon.astro";
+import IconButton from "./IconButton.astro";
+---
+
+<header class="w-full">
+  <div class="flex items-center">
+    <span class="flex-none mr-1">
+      <svg width="22" height="22" fill="currentColor" class="text-primary">
+        <use href="/icons.svg#icon-ghost"></use>
+      </svg>
+    </span>
+
+    <h1 class="flex-1 text-primary text-lg font-bold">GhostCrypt</h1>
+
+    <IconButton icon="info" text="Help" size="14" action="help" btnClass="btn-xs btn-circle btn-soft btn-primary hover:text-base-100 flex-none" tootipClass="tooltip-bottom" />
   </div>
 </header>
