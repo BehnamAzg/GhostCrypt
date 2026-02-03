@@ -1,0 +1,10 @@
+---
+import Icon from "./Icon.astro";
+
+const { text = "", icon = "",  badgeClass="" } = Astro.props;
+---
+
+<div class=`badge rounded-sm text-xs px-2 gap-x-1.5 ${badgeClass}`>
+  {icon && <Icon icon={icon} size="14" />}
+  <span class="w-fit">{text}</span>
+</div>

@@ -1,0 +1,22 @@
+---
+import Header from "./Header.astro";
+import Icon from "./Icon.astro";
+import IconButton from "./IconButton.astro";
+import MessagePreview from "./MessagePreview.astro";
+import Tabs from "./Tabs.astro";
+---
+
+<Header btnAction="infoMessages" />
+<div class="w-full flex flex-col gap-3 max-sm:gap-6 h-full overflow-y-auto no-scrollbar">
+  <fieldset class="fieldset w-full">
+    <label for="input" class="label w-fit font-bold mb-2">Your Contacts on GhostCrypt:</label>
+    <MessagePreview />
+    <MessagePreview />
+  </fieldset>
+</div>
+<div class="flex justify-between items-center w-full overflow-hidden">
+  <IconButton btnClass="invisible" />
+  <Tabs active="messages" />
+  <IconButton text="Add Contact" icon="plus" btnClass="btn-primary btn-circle text-base-100 hover:bg-secondary border-none" />
+</div>
+

@@ -4,7 +4,7 @@ import Icon from "./Icon.astro";
 const { text = "", icon = "", size = "14", action, btnClass } = Astro.props;
 ---
 
-<button class=`btn btn-sm ${btnClass}` data-action={action}>
+<button class=`btn ${btnClass}` data-action={action}>
   {icon && <Icon icon={icon} size={size} />}
   {text}
 </button>

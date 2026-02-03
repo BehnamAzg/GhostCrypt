@@ -2,9 +2,29 @@
 @plugin "daisyui" {
   themes:
     light --default,
-    dark --prefersdark, nord;
+    dark --prefersdark,
+    nord;
 }
 
 @utility flex-center {
   @apply flex justify-center items-center;
 }
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* enter-scale {
+  @apply opacity-100 scale-100 translate-y-0 transition-all duration-200;
+}
+@starting-style {
+  enter-scale {
+    @apply opacity-0 scale-0 translate-y-full;
+  }
+} */

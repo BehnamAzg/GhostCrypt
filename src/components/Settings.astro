@@ -1,0 +1,37 @@
+---
+import Button from "./Button.astro";
+import Header from "./Header.astro";
+import Language from "./Language.astro";
+import PrivacyAndSecurity from "./PrivacyAndSecurity.astro";
+import Tabs from "./Tabs.astro";
+import Theme from "./Theme.astro";
+---
+
+<Header btnAction="none" />
+<div class="w-full flex flex-col gap-3 max-sm:gap-6">
+  <div class="w-full flex">
+    <Theme />
+    <Language />
+  </div>
+  <PrivacyAndSecurity />
+  <div class="flex flex-wrap gap-2 mt-2">
+    <a href="/" target="_blank" class="flex-1">
+      <Button text="Github Page" icon="github" btnClass="btn-md text-xs px-3 w-full whitespace-nowrap" />
+    </a>
+    <a href="/" target="_blank" class="">
+      <Button text="Release Notes" icon="clipboard" btnClass="btn-md text-xs px-3 whitespace-nowrap" />
+    </a>
+    <a href="/" target="_blank" class="">
+      <Button text="Report Bugs" icon="bug" btnClass="btn-md text-xs px-3 whitespace-nowrap" />
+    </a>
+    <a href="/" target="_blank" class="flex-1">
+      <Button text="About GhostCrypt" icon="infoCircle" btnClass="btn-md text-xs px-3 w-full whitespace-nowrap" />
+    </a>
+    <a href="/" target="_blank" class="flex-1">
+      <Button text="Donate" icon="heart" btnClass="btn-md text-xs px-3 w-full whitespace-nowrap" />
+    </a>
+  </div>
+  <!-- <hr class="my-4 max-sm:my-2 border-neutral-content" /> -->
+  <Button text="Install the App" icon="download" btnClass="btn-md btn-primary text-base-100 mt-2" />
+</div>
+<Tabs active="settings" />

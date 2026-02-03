@@ -1,11 +1,11 @@
 ---
 import Icon from "./Icon.astro";
 
-const { text = "", icon, size = "16", tootipClass = "", tabClass = "" } = Astro.props;
+const { text = "", icon, size = "16", tootipClass = "", tabClass = ""} = Astro.props;
 ---
 
 <div class=`tooltip text-xs ${tootipClass}` data-tip={text}>
-  <a role="tab" class=`tab px-4 ${tabClass}`>
+  <button role="tab" class=`tab hover:bg-neutral-content px-4 rounded-md ${tabClass}`>
     <Icon icon={icon} size={size} />
-  </a>
+  </button>
 </div>

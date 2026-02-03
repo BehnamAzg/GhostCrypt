@@ -1,0 +1,17 @@
+---
+import Header from "./Header.astro";
+import Input from "./Input.astro";
+import Output from "./Output.astro";
+import OutputSettings from "./OutputSettings.astro";
+import Passphrase from "./Passphrase.astro";
+import Tabs from "./Tabs.astro";
+---
+
+<Header btnAction="infoMain" />
+<div class="w-full flex flex-col gap-3 max-sm:gap-6">
+  <Input />
+  <OutputSettings />
+  <Passphrase />
+  <Output />
+</div>
+<Tabs active="home" />

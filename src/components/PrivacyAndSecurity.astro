@@ -1,0 +1,18 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<details class="collapse bg-base-100 border border-base-300 group" name="security-accordion">
+  <summary class="collapse-title font-semibold text-sm flex items-center w-full px-3 py-2">
+    <span class="mr-auto">Privacy and Security</span>
+    <Icon icon="arrowDown" size="14" svgClass="transition-transform duration-300 group-open:rotate-180" />
+  </summary>
+  <div class="collapse-content text-xs">
+    <p>These options will be available soon in the future updates:</p>
+    <ul class="list-disc list-inside">
+      <li>Setting a master passcode for the application.</li>
+      <li>Deleting all the data after a period of inactivity.</li>
+      <li>And more...</li>
+    </ul>
+  </div>
+</details>

@@ -1,6 +1,7 @@
 ---
 import Icon from "./Icon.astro";
 import IconButton from "./IconButton.astro";
+const { btnAction } = Astro.props;
 ---
 
 <header class="w-full">
@@ -13,6 +14,6 @@ import IconButton from "./IconButton.astro";
 
     <h1 class="flex-1 text-primary text-lg font-bold">GhostCrypt</h1>
 
-    <IconButton icon="dots" text="Info" size="14" action="infoMain" btnClass="btn-xs btn-circle btn-soft btn-primary hover:text-base-100 flex-none" tootipClass="tooltip-bottom" />
+    {btnAction === "none" ? <p class="flex items-center text-xs font-semibold text-primary gap-x-1.5"><Icon icon="code" size="16" /><span>Version 1.0.0</span></p> : <IconButton icon="info" text="Info" size="16" action={btnAction} btnClass="btn-xs btn-circle btn-soft btn-primary hover:text-base-100 flex-none " tootipClass="tooltip-bottom" />}
   </div>
 </header>

@@ -13,6 +13,10 @@ import "../styles/global.css";
 		<script defer type="module" src="/src/scripts/main.js" is:inline></script>
 	</head>
 	<body>
-		<slot />
+		<main class="max-w-sm max-sm:w-full h-screen flex-center flex-col justify-between mx-auto gap-4 py-6 max-sm:py-8  max-sm:px-4 select-none relative">
+			<slot />
+		</main>
 	</body>
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
