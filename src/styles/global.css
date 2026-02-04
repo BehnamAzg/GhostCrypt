@@ -1,15 +1,13 @@
 @import "tailwindcss";
-/* @plugin "daisyui" {
-  themes:
-    light --default,
-    dark --prefersdark,
-    nord;
-} */
- @plugin "daisyui" {
+@plugin "daisyui" {
   themes: nord --default, night --prefersdark;
 }
 
 @custom-variant dark (&:where([data-theme=night], [data-theme=night] *));
+
+[data-theme] .btn-active {
+  @apply btn-primary text-base-100;
+}
 
 @utility flex-center {
   @apply flex justify-center items-center;
@@ -25,11 +23,11 @@
   }
 }
 
-/* enter-scale {
-  @apply opacity-100 scale-100 translate-y-0 transition-all duration-200;
+.enter-scale {
+  @apply opacity-100 scale-100 transition-all duration-200;
 }
 @starting-style {
-  enter-scale {
-    @apply opacity-0 scale-0 translate-y-full;
+  .enter-scale {
+    @apply opacity-0 scale-0 ;
   }
-} */
+}
