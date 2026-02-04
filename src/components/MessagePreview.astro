@@ -2,7 +2,7 @@
 import Icon from "./Icon.astro";
 ---
 
-<div class="flex items-center gap-3 bg-base-200 rounded-xl px-3 py-2 overflow-hidden hover:bg-base-300 cursor-pointer">
+<button class="flex items-center gap-3 bg-base-200 rounded-xl px-3 py-2 overflow-hidden hover:bg-base-300 cursor-pointer" data-action="openChat">
   <!-- Avatar -->
   <div class="avatar">
     <div class="h-10 w-10 flex-center rounded-full bg-base-100 text-primary">
@@ -11,7 +11,7 @@ import Icon from "./Icon.astro";
   </div>
   <!-- Name & last message -->
   <div class="min-w-0 flex-1 flex flex-col justify-between">
-    <div class="text-sm font-bold">Contact Name</div>
+    <div class="text-sm font-bold text-left">Contact Name</div>
     <div class="text-xs opacity-50 truncate">lorem ipsum dolor sit amet lorem ipsum lorem ipsum dolor sit amet lorem ipsum</div>
   </div>
   <!-- Date & New Message -->
@@ -19,4 +19,4 @@ import Icon from "./Icon.astro";
     <div class="text-xs whitespace-nowrap text-primary">Dec 6</div>
     <div class="badge badge-sm badge-secondary text-xs text-base-100">2</div>
   </div>
-</div>
+</button>

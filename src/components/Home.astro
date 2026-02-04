@@ -1,17 +1,22 @@
 ---
 import Header from "./Header.astro";
 import Input from "./Input.astro";
+import Modal from "./Modal.astro";
 import Output from "./Output.astro";
 import OutputSettings from "./OutputSettings.astro";
 import Passphrase from "./Passphrase.astro";
 import Tabs from "./Tabs.astro";
 ---
 
-<Header btnAction="infoMain" />
-<div class="w-full flex flex-col gap-3 max-sm:gap-6">
-  <Input />
-  <OutputSettings />
-  <Passphrase />
-  <Output />
+<div class="max-w-sm max-sm:w-full h-screen flex-center flex-col justify-between mx-auto gap-4 py-6 max-sm:py-8  max-sm:px-4 select-none relative tab-content" id="homeTab">
+  <Header btnAction="infoMain" />
+  <div class="w-full flex flex-col gap-3 max-sm:gap-6">
+    <Input />
+    <OutputSettings />
+    <Passphrase />
+    <Output />
+  </div>
+  <Tabs active="home" />
+  
+  <Modal id="infoMain" title="Main Page Info" /> 
 </div>
-<Tabs active="home" />

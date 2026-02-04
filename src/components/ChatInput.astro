@@ -1,0 +1,11 @@
+---
+import IconButton from "./IconButton.astro";
+---
+
+<div class="flex w-full gap-2">
+  <label class="input w-full">
+    <input type="search" class="grow placeholder:text-xs" placeholder="Write a message..." />
+  </label>
+  <IconButton icon="send" text="Send" btnClass="btn-primary text-base-100 h-full aspect-square shrink-0 w-auto" action="sendMessage" />
+</div>
+

@@ -22,7 +22,7 @@ import IconButton from "./IconButton.astro";
   </div>
   <!-- Button Group -->
   <div class="flex justify-between w-full gap-x-1.5">
-    <Button icon="generate" text="Generate Passphrase" id="generate" btnClass="btn-sm btn-primary text-base-100" />
+    <Button icon="generate" text="Generate Passphrase" id="generate" btnClass="btn-sm btn-primary text-base-100" action="generatePassphrase" />
     <div class="flex w-fit gap-x-1.5">
       <IconButton icon="clear" text="Clear" action="clearPassphrase" />
       <IconButton icon="copy" text="Copy" action="copyPassphrase" />

@@ -1,9 +1,27 @@
 ---
+import ChatBubbleReceived from "./ChatBubbleReceived.astro";
+import ChatBubbleSent from "./ChatBubbleSent.astro";
 import ChatHeader from "./ChatHeader.astro";
-
+import ChatInput from "./ChatInput.astro";
+import IconButton from "./IconButton.astro";
+import Tabs from "./Tabs.astro";
 ---
 
-<div class="w-full flex flex-col gap-3 max-sm:gap-6 h-full overflow-y-auto no-scrollbar">
-  <ChatHeader />
-
+<div class="max-w-sm max-sm:w-full h-screen flex-center flex-col justify-between mx-auto gap-4 py-6 max-sm:py-8  max-sm:px-4 select-none relative tab-content hidden" id="chatTab">
+  <div class="w-full flex flex-col gap-3 max-sm:gap-6 h-full overflow-y-auto no-scrollbar">
+    <ChatHeader />
+    <div class="text-center text-xs">Feb 3</div>
+    <ChatBubbleReceived />
+    <ChatBubbleSent />
+    <div class="text-center text-xs">Feb 3</div>
+    <ChatBubbleReceived />
+  </div>
+  
+  <ChatInput />
+  
+  <div class="flex justify-between items-center w-full ">
+    <IconButton text="Go Back" icon="arrowLeft" btnClass="btn-soft btn-circle text-neutral border-none" action="backToMessages" />
+    <Tabs active="messages" />
+    <IconButton btnClass="invisible" />
+  </div>
 </div>
