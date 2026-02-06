@@ -1,6 +1,9 @@
-import { initButtonHandler } from "./buttonHandler";
+import { setupButtonHandler } from "./buttonHandler";
+import { setupPassphraseValidation, setupPassphrasePasteHandling } from "./passphraseButtonHandler.js";
 
 const init = function () {
-  initButtonHandler();
+  setupButtonHandler();
+  setupPassphraseValidation();
+  setupPassphrasePasteHandling();
 };
 init();

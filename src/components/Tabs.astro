@@ -4,14 +4,14 @@ import Tab from "./Tab.astro";
 const { active = "" } = Astro.props;
 ---
 
-<div role="tablist" class="tabs tabs-sm tabs-box rounded-lg">
+<div role="tablist" class="tabs tabs-sm tabs-box rounded-lg min-w-0">
   <Tab icon="settings" text="Settings" action="settingsTab" tabClass={
     active === "settings" && "tab-active bg-primary text-base-100 hover:bg-secondary"
   } />
   <Tab icon="home" text="Home" action="homeTab" tabClass={
     active === "home" && "tab-active bg-primary text-base-100 hover:bg-secondary"
   } />
-  <Tab icon="chat" text="Messages" action="messagesTab" tabClass={
+  <!-- <Tab icon="chat" text="Messages" action="messagesTab" tabClass={
     active === "messages" && "tab-active bg-primary text-base-100 hover:bg-secondary"
-  } />
+  } /> -->
 </div>

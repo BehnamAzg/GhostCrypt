@@ -9,16 +9,19 @@ import IconButton from "./IconButton.astro";
   <div class="flex justify-between text-xs w-full">
     <label for="input" class="label w-fit font-bold">Passphrase:</label>
     <!-- Badge -->
-     <span id="passphraseBadge">
-       <Badge text="Requires Passphrase" icon="warning" badgeClass="badge-warning" /> 
-     </span>
+    <span id="passphraseBadge">
+      <Badge text="Not Filled" id="passphraseCantCopyBadge" badgeClass="badge-error hidden show-for-a-moment" />
+      <Badge text="Not Correct" id="passphraseNotCorrectBadge" badgeClass="badge-error hidden show-for-a-moment" />
+      <Badge text="Copied" id="passphraseCopiedBadge" badgeClass="badge-success hidden show-for-a-moment" />
+      <Badge text="Requires all inputs to be filled" id="passphraseWarningBadge" icon="warning" badgeClass="badge-warning hidden" />
+    </span>
   </div>
   <div class="join" id="passphraseInput">
-    <input type="text" name="passphrase-1" class="join-item input" />
-    <input type="text" name="passphrase-2" class="join-item input" />
-    <input type="text" name="passphrase-3" class="join-item input" />
-    <input type="text" name="passphrase-4" class="join-item input" />
-    <input type="text" name="passphrase-5" class="join-item input" />
+    <input type="text" inputmode="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="passphrase-1" class="join-item input" />
+    <input type="text" inputmode="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="passphrase-2" class="join-item input" />
+    <input type="text" inputmode="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="passphrase-3" class="join-item input" />
+    <input type="text" inputmode="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="passphrase-4" class="join-item input" />
+    <input type="text" inputmode="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="passphrase-5" class="join-item input" />
   </div>
   <!-- Button Group -->
   <div class="flex justify-between w-full gap-x-1.5">

@@ -1,15 +1,14 @@
 ---
 import Header from "./Header.astro";
-import Icon from "./Icon.astro";
 import IconButton from "./IconButton.astro";
 import MessagePreview from "./MessagePreview.astro";
 import Modal from "./Modal.astro";
 import Tabs from "./Tabs.astro";
 ---
 
-<div class="max-w-sm max-sm:w-full h-screen flex-center flex-col justify-between mx-auto gap-4 py-6 max-sm:py-8  max-sm:px-4 select-none relative tab-content hidden" id="messagesTab">
+<div class="max-w-sm max-sm:w-full h-screen flex-center flex-col justify-between mx-auto gap-4 py-6 max-sm:px-4 select-none relative tab-content hidden" id="messagesTab">
   <Header btnAction="infoMessages" />
-  <div class="w-full flex flex-col gap-3 max-sm:gap-6 h-full overflow-y-auto no-scrollba enter-scale">
+  <div class="w-full flex flex-col gap-3 max-sm:gap-6 h-full overflow-y-auto no-scrollbar enter-scale">
     <fieldset class="fieldset w-full">
       <label for="input" class="label w-fit font-bold mb-2">Your Contacts on GhostCrypt:</label>
       <MessagePreview />
@@ -17,12 +16,14 @@ import Tabs from "./Tabs.astro";
     </fieldset>
   </div>
 
-  <div class="flex justify-between items-center w-full">
+  <div class="flex justify-between items-center w-full overflow-hidden">
     <IconButton btnClass="invisible" />
     <Tabs active="messages" />
-    <IconButton text="Add Contact" icon="plus" btnClass="btn-primary btn-circle text-base-100 hover:bg-secondary border-none" action="addContact" />
+    <IconButton text="Add Contact" icon="plus" btnClass="btn-primary  text-base-100 rounded-full hover:bg-secondary border-none" action="addContact" />
   </div>
+
   
   <Modal id="infoMessages" title="Messages Page Info" />
   <Modal id="addContact" title="Add Contact" />
 </div>
+

@@ -1,12 +1,16 @@
 import { navigateTabs } from "./navigateTabs.js";
 import { openModal } from "./openModal.js";
+import { clearInput, copyInput, pasteInput } from "./inputButtonHandler.js";
+import { clearPassphrase, copyPassphrase, pastePassphrase, generatePassphrase } from "./passphraseButtonHandler.js";
+import { copyOutput, shareOutput } from "./outputButtonHandler.js";
 
-export const initButtonHandler = function () {
+export const setupButtonHandler = function () {
   document.addEventListener("click", (e) => {
     if (!(e.target instanceof Element)) return;
     const btn = e.target.closest("button");
     if (!(btn instanceof HTMLElement)) return;
     const action = btn.dataset.action;
+    if (!action) return;
 
     switch (action) {
       case "homeTab":
@@ -22,34 +26,34 @@ export const initButtonHandler = function () {
         openModal(action);
         break;
       case "clearInput":
-        console.log("test");
+        clearInput();
         break;
       case "copyInput":
-        console.log("test");
+        copyInput();
         break;
       case "pasteInput":
-        console.log("test");
+        pasteInput();
         break;
       case "generatePassphrase":
-        console.log("test");
+        generatePassphrase();
         break;
       case "clearPassphrase":
-        console.log("test");
+        clearPassphrase();
         break;
       case "copyPassphrase":
-        console.log("test");
+        copyPassphrase();
         break;
       case "pastePassphrase":
-        console.log("test");
+        pastePassphrase();
         break;
-      case "clearOutput":
-        console.log("test");
+      case "copyOutput":
+        copyOutput();
         break;
       case "shareOutput":
-        console.log("test");
+        shareOutput();
         break;
       case "installApp":
-        console.log("test");
+        console.log("installApp test");
         break;
       case "infoMessages":
         openModal(action);
@@ -58,22 +62,22 @@ export const initButtonHandler = function () {
         openModal(action);
         break;
       case "openChat":
-        console.log("test");
+        console.log("openChat test");
         break;
       case "sendMessage":
-        console.log("test");
+        console.log("sendMessage test");
         break;
       case "backToMessages":
-        console.log("test");
+        console.log("backToMessages test");
         break;
       case "editContact":
-        console.log("test");
+        console.log("editContact test");
         break;
       case "deleteContact":
-        console.log("test");
+        console.log("deleteContact test");
         break;
       case "viewEncryption":
-        console.log("test");
+        console.log("viewEncryption test");
         break;
       default:
         console.log("No handler for this action");
