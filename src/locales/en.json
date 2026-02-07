@@ -43,5 +43,14 @@
   "link.about": "About GhostCrypt",
   "link.donate": "Donate",
   "button.install-label": "For offline use, install the app on your device:",
-  "button.install": "Install the App"
+  "button.install": "Install the App",
+  "info.title": "How to Use:",
+  "info.encrypting": "Encrypting:",
+  "info.encrypting-1": "Set a 5-word passphrase (remember it).",
+  "info.encrypting-2": "Without it, decryption is impossible.",
+  "info.obfuscation": "Obfuscation Layer:",
+  "info.obfuscation-1": "\"Words\" layer looks like natural text, it's good for SMS.",
+  "info.obfuscation-2": "\"Compact\", \"Characters\" or \"Base64\", is better for shorter length output.",
+  "info.decrypting": "Decrypting:",
+  "info.decrypting-1": "Paste the encrypted message, enter the exact passphrase, select the correct obfuscation type, and put the output mode to \"Decrypt\"."
 }

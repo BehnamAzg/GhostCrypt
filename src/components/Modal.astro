@@ -1,5 +1,5 @@
 ---
-const { id = "", title = "" } = Astro.props;
+const { id = "", title = "", i18n = "" } = Astro.props;
 ---
 
 <dialog id={id} class="modal">
@@ -12,8 +12,8 @@ const { id = "", title = "" } = Astro.props;
     <form method="dialog">
       <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 rtl:left-2 rtl:right-auto">✕</button>
     </form>
-    <h3 class="text-md font-bold">{title}</h3>
-    <div class="py-4">
+    <h3 class="text-md font-bold" data-i18n={i18n}>{title}</h3>
+    <div class="pt-5">
       <slot />
     </div>
   </div>
