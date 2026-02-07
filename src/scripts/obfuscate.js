@@ -1,5 +1,6 @@
 import { getEnWords, getFaWords, getEmojisWords } from "./wordList.js";
 import { arrayToBase64 } from "./encryptMessage.js";
+import { base65536Encode } from "./base65536.js";
 
 export const obfuscate = async function (text, type) {
   const binary = new TextEncoder().encode(text); // To bytes
@@ -8,15 +9,15 @@ export const obfuscate = async function (text, type) {
   switch (type) {
     case "base64":
       return arrayToBase64(binary);
+    case "base65536":
+      return base65536Encode(binary);
     case "numbers":
       return Array.from(binary)
         .map((b) => b.toString(10).padStart(3, "0"))
         .join(""); // 000-255 as digits
     case "emojis":
       const emojiMap = await getEmojisWords();
-      return [...binary]
-        .map((b) => emojiMap[b])
-        .join("");
+      return [...binary].map((b) => emojiMap[b]).join("");
     case "characters":
       return Array.from(binary)
         .map((b) => String.fromCharCode(b + 65))

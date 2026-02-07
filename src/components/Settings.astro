@@ -17,24 +17,24 @@ import Theme from "./Theme.astro";
     <!-- <PrivacyAndSecurity /> -->
     <div class="flex flex-wrap gap-2 mt-2">
       <a href="https://github.com/BehnamAzg/GhostCrypt" target="_blank" class="flex-1">
-        <Button text="Github Page" icon="github" btnClass="btn-md text-xs px-3 w-full whitespace-nowrap" />
+        <Button text="Github Page" icon="github" btnClass="btn-md text-xs px-3 w-full whitespace-nowrap" i18n="link.github" />
       </a>
       <a href="https://github.com/BehnamAzg/GhostCrypt/releases" target="_blank" class="">
-        <Button text="Release Notes" icon="clipboard" btnClass="btn-md text-xs px-3 whitespace-nowrap" />
+        <Button text="Release Notes" icon="clipboard" btnClass="btn-md text-xs px-3 whitespace-nowrap" i18n="link.releases" />
       </a>
       <a href="https://github.com/BehnamAzg/GhostCrypt/issues" target="_blank" class="">
-        <Button text="Report Bugs" icon="bug" btnClass="btn-md text-xs px-3 whitespace-nowrap" />
+        <Button text="Report Bugs" icon="bug" btnClass="btn-md text-xs px-3 whitespace-nowrap" i18n="link.issues" />
       </a>
       <a href="https://github.com/BehnamAzg/GhostCrypt?tab=readme-ov-file#readme" target="_blank" class="flex-1">
-        <Button text="About GhostCrypt" icon="infoCircle" btnClass="btn-md text-xs px-3 w-full whitespace-nowrap" />
+        <Button text="About GhostCrypt" icon="infoCircle" btnClass="btn-md text-xs px-3 w-full whitespace-nowrap" i18n="link.about" />
       </a>
-      <a href="/" target="_blank" class="flex-1">
-        <Button text="Donate" icon="heart" btnClass="btn-md text-xs px-3 w-full whitespace-nowrap" />
+      <a href="https://behnamazg.github.io/donation" target="_blank" class="flex-1">
+        <Button text="Donate" icon="heart" btnClass="btn-md text-xs px-3 w-full whitespace-nowrap" i18n="link.donate" />
       </a>
     </div>
     <!-- <hr class="my-4 max-sm:my-2 border-neutral-content" /> -->
-    <p class="text-center text-xs font-semibold text-primary mt-2">For offline use, install the app on your device:</p>
-    <Button text="Install the App" icon="download" btnClass="btn-md btn-primary text-base-100 " action="installApp" />
+    <p class="text-center text-xs font-semibold text-primary mt-2" data-i18n="button.install-label">For offline use, install the app on your device:</p>
+    <Button text="Install the App" icon="download" btnClass="btn-md btn-primary text-base-100 " action="installApp" i18n="button.install" />
   </div>
   <Tabs active="settings" />
 </div>

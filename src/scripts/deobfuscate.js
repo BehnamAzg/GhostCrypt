@@ -1,5 +1,6 @@
 import { getEnWords, getFaWords, getEmojisWords } from "./wordList.js";
 import { base64ToArray } from "./decryptMessage.js";
+import { base65536Decode } from "./base65536.js";
 
 export const deobfuscate = async function (text, type) {
   let binary = [];
@@ -10,6 +11,9 @@ export const deobfuscate = async function (text, type) {
   switch (type) {
     case "base64":
       return new TextDecoder().decode(base64ToArray(text));
+    case "base65536":
+      const binaryArray = base65536Decode(text);
+      return new TextDecoder().decode(binaryArray);
     case "numbers":
       for (let i = 0; i < text.length; i += 3) {
         binary.push(parseInt(text.slice(i, i + 3), 10));

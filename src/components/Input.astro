@@ -7,19 +7,19 @@ const { label } = Astro.props;
 
 <fieldset class="fieldset w-full">
   <div class="flex justify-between text-xs w-full">
-    <label for="input" class="label w-fit font-bold">Input:</label>
+    <label for="input" class="label w-fit font-bold" data-i18n="input.label">Input:</label>
     <!-- Badge -->
     <span id="inputBadge">
-      <Badge text="Copied" id="inputCopiedBadge" badgeClass="badge-success hidden show-for-a-moment" />
-      <Badge text="Invalid Passphrase or Settings" id="inputWarningBadge" icon="warning" badgeClass="badge-warning hidden" />
+      <Badge text="Copied" id="inputCopiedBadge" badgeClass="badge-success hidden show-for-a-moment" i18n="alert.copied" />
+      <Badge text="Invalid Passphrase or Settings" id="inputWarningBadge" icon="warning" badgeClass="badge-warning hidden" i18n="error.invalid" />
     </span>
   </div>
   <!-- Textarea -->
-  <textarea id="input" name="input" class="textarea w-full text-xs" placeholder="Your Message..."></textarea>
+  <textarea id="input" name="input" class="textarea w-full text-xs" placeholder="Your Message..." data-i18n-placeholder="input.placeholder"></textarea>
   <!-- Button Group -->
   <div class="flex justify-end w-full gap-x-1.5">
-    <IconButton icon="clear" text="Clear" action="clearInput" />
-    <IconButton icon="copy" text="Copy" action="copyInput" />
-    <IconButton icon="paste" text="Paste" action="pasteInput" />
+    <IconButton icon="clear" text="Clear" action="clearInput" i18n="button.clear" />
+    <IconButton icon="copy" text="Copy" action="copyInput" i18n="button.copy" />
+    <IconButton icon="paste" text="Paste" action="pasteInput" i18n="button.paste" />
   </div>
 </fieldset>

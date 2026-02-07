@@ -7,18 +7,18 @@ const { label } = Astro.props;
 
 <fieldset class="fieldset w-full">
   <div class="flex justify-between text-xs w-full">
-    <label for="output" class="label w-fit font-bold">Output:</label>
+    <label for="output" class="label w-fit font-bold" data-i18n="output.label">Output:</label>
     <!-- Badge -->
     <span id="outputBadge">
-      <Badge text="Copied" id="outputCopiedBadge" badgeClass="badge-success hidden show-for-a-moment" />
-      <Badge text="0 Characters" id="charCounter" badgeClass="badge-soft badge-secondary" />
+      <Badge text="Copied" id="outputCopiedBadge" badgeClass="badge-success hidden show-for-a-moment" i18n="alert.copied" />
+      <Badge text="0 Characters" id="charCounter" badgeClass="badge-soft badge-secondary" i18n="output.characters" />
     </span>
   </div>
   <!-- Textarea -->
   <textarea id="output" name="output" class="textarea w-full text-xs" readonly></textarea>
   <!-- Button Group -->
   <div class="flex justify-end w-full gap-x-1.5">
-    <IconButton icon="copy" text="Copy" action="copyOutput" />
-    <IconButton icon="share" text="Share" action="shareOutput" />
+    <IconButton icon="copy" text="Copy" action="copyOutput" i18n="button.copy" />
+    <IconButton icon="share" text="Share" action="shareOutput" i18n="button.share" />
   </div>
 </fieldset>

@@ -40,10 +40,17 @@ const processMessage = async function () {
 
       let toObfuscate = jsonString;
 
+      // base65536 mode does NOT need the base64 wrapper
+      if (obfuscation === "base65536") {
+        toObfuscate = jsonString; // raw JSON bytes
+      }
+
       // Only skip base64 wrapper for emojis mode
       if (obfuscation !== "emojis") {
         toObfuscate = btoa(jsonString);
       }
+
+      
 
       result = await obfuscate(toObfuscate, obfuscation);
     } else {

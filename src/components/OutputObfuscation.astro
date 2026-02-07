@@ -1,12 +1,13 @@
 <fieldset class="fieldset w-full">
-  <label for="obfuscationSelect" class="label w-fit font-bold">Obfuscation Layer:</label>
+  <label for="obfuscationSelect" class="label w-fit font-bold" data-i18n="layer.label">Obfuscation Layer:</label>
   <select class="select select-sm" id="obfuscationSelect">
-    <option value="hybrid-persian" selected>Hybrid Persian</option>
-    <option value="hybrid-english">Hybrid English</option>
-    <option value="base64">Base64</option>
-    <option value="characters">Characters</option>
-    <option value="numbers">Numbers</option>
-    <option value="emojis">Emojis</option>
-    <option value="dots">Dots</option>
+    <option value="base64" data-i18n="layer.base64" selected >Base64</option>
+    <option value="hybrid-english" data-i18n="layer.hybrid-english">English Words</option>
+    <option value="hybrid-persian" data-i18n="layer.hybrid-persian">Persian Words</option>
+    <option value="base65536" data-i18n="layer.base65536" >Compact</option>
+    <option value="characters" data-i18n="layer.characters">Characters</option>
+    <option value="numbers" data-i18n="layer.numbers">Numbers</option>
+    <option value="emojis" data-i18n="layer.emojis">Emojis</option>
+    <option value="dots" data-i18n="layer.dots">Dots</option>
   </select>
 </fieldset>

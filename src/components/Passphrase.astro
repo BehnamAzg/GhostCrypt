@@ -7,13 +7,13 @@ import IconButton from "./IconButton.astro";
 
 <fieldset class="fieldset w-full">
   <div class="flex justify-between text-xs w-full">
-    <label for="input" class="label w-fit font-bold">Passphrase:</label>
+    <label for="input" class="label w-fit font-bold" data-i18n="passphrase.label">Passphrase:</label>
     <!-- Badge -->
     <span id="passphraseBadge">
-      <Badge text="Not Filled" id="passphraseCantCopyBadge" badgeClass="badge-error hidden show-for-a-moment" />
-      <Badge text="Not Correct" id="passphraseNotCorrectBadge" badgeClass="badge-error hidden show-for-a-moment" />
-      <Badge text="Copied" id="passphraseCopiedBadge" badgeClass="badge-success hidden show-for-a-moment" />
-      <Badge text="Requires all inputs to be filled" id="passphraseWarningBadge" icon="warning" badgeClass="badge-warning hidden" />
+      <Badge text="Not Filled" id="passphraseCantCopyBadge" badgeClass="badge-error hidden show-for-a-moment" i18n="error.not-filled" />
+      <Badge text="Not Correct" id="passphraseNotCorrectBadge" badgeClass="badge-error hidden show-for-a-moment" i18n="error.not-correct" />
+      <Badge text="Copied" id="passphraseCopiedBadge" badgeClass="badge-success hidden show-for-a-moment" i18n="alert.copied" />
+      <Badge text="Requires all inputs to be filled" id="passphraseWarningBadge" icon="warning" badgeClass="badge-warning hidden" i18n="error.unfilled-passphrase" />
     </span>
   </div>
   <div class="join" id="passphraseInput">
@@ -25,11 +25,11 @@ import IconButton from "./IconButton.astro";
   </div>
   <!-- Button Group -->
   <div class="flex justify-between w-full gap-x-1.5">
-    <Button icon="generate" text="Generate Passphrase" id="generate" btnClass="btn-sm btn-primary text-base-100" action="generatePassphrase" />
+    <Button icon="generate" text="Generate Passphrase" id="generate" btnClass="btn-sm btn-primary text-base-100" action="generatePassphrase" i18n="button.generate-passphrase" />
     <div class="flex w-fit gap-x-1.5">
-      <IconButton icon="clear" text="Clear" action="clearPassphrase" />
-      <IconButton icon="copy" text="Copy" action="copyPassphrase" />
-      <IconButton icon="paste" text="Paste" action="pastePassphrase" />
+      <IconButton icon="clear" text="Clear" action="clearPassphrase" i18n="button.clear" />
+      <IconButton icon="copy" text="Copy" action="copyPassphrase" i18n="button.copy" />
+      <IconButton icon="paste" text="Paste" action="pastePassphrase" i18n="button.paste" />
     </div>
   </div>
 </fieldset>

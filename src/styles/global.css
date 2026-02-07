@@ -5,6 +5,19 @@
 
 @custom-variant dark (&:where([data-theme=night], [data-theme=night] *));
 
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../assets/fonts/Vazirmatn[wght].woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.lang-fa {
+  font-family: "Vazirmatn", Tahoma, system-ui, sans-serif, -apple-system !important;
+  font-variant-numeric: tabular-nums;
+}
+
 [data-theme] .btn-active {
   @apply btn-primary text-base-100;
 }
@@ -41,4 +54,27 @@
 
 .show-for-a-moment {
     animation: flash 1.5s forwards;
+}
+
+
+
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .left-aligned,
+html[dir="rtl"] input,
+html[dir="rtl"] textarea {
+  text-align: right;
+}
+
+/* Fix flex layouts that break in RTL */
+html[dir="rtl"] .row {
+  flex-direction: row-reverse;
+}
+
+/* Icons that should flip in RTL */
+html[dir="rtl"] .icon-arrow-right {
+  transform: scaleX(-1);
 }
