@@ -1,4 +1,4 @@
-const base64ToArray = function (base64) {
+export const base64ToArray = function (base64) {
   return Uint8Array.from(atob(base64), (c) => c.charCodeAt(0));
 };
 

@@ -1,4 +1,4 @@
-const arrayToBase64 = function (arr) {
+export const arrayToBase64 = function (arr) {
   return btoa(String.fromCharCode(...arr));
 };
 

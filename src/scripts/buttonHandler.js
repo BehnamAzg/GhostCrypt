@@ -19,9 +19,6 @@ export const setupButtonHandler = function () {
       case "settingsTab":
         navigateTabs(action);
         break;
-      case "messagesTab":
-        navigateTabs(action);
-        break;
       case "infoMain":
         openModal(action);
         break;
@@ -55,6 +52,10 @@ export const setupButtonHandler = function () {
       case "installApp":
         console.log("installApp test");
         break;
+      /*
+      case "messagesTab":
+        navigateTabs(action);
+        break;
       case "infoMessages":
         openModal(action);
         break;
@@ -79,8 +80,9 @@ export const setupButtonHandler = function () {
       case "viewEncryption":
         console.log("viewEncryption test");
         break;
+      */
       default:
-        console.log("No handler for this action");
+        console.log("No handler for this action!");
     }
   });
 };

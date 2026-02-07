@@ -1,3 +1,5 @@
+import { getEffWords } from "./wordList.js";
+
 const passphraseInputs = document.querySelectorAll("#passphraseInput input");
 const passphraseWarningBadge = document.getElementById("passphraseWarningBadge");
 const copiedBadge = document.getElementById("passphraseCopiedBadge");
@@ -114,22 +116,6 @@ export const setupPassphrasePasteHandling = function () {
     });
   });
 };
-
-
-const getEffWords = async function () {
-  if (effWordsCache) return effWordsCache;
-  try {
-    const response = await fetch('/src/scripts/data/eff-large-wordlist.json');
-    if (!response.ok) {
-      throw new Error(`Failed to load word list: ${response.status}`);
-    }
-    effWordsCache = await response.json();
-    return effWordsCache;
-  } catch (err) {
-    console.error("Could not load EFF word list:", err);
-    return ["change", "this", "fallback", "passphrase", "please"];
-  }
-}
 
 export const generatePassphrase = async function () {
   const words = await getEffWords();

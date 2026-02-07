@@ -1,7 +1,11 @@
+import { triggerProcess } from "./processMessage.js";
+
 const inputField = document.getElementById("input");
 const copiedBadge = document.getElementById("inputCopiedBadge");
+const inputWarningBadge = document.getElementById("inputWarningBadge");
 
 export const clearInput = function () {
+  inputWarningBadge.classList.add("hidden");
   if (!inputField.value) return;
   inputField.value = "";
 };
@@ -18,5 +22,6 @@ export const copyInput = function () {
 export const pasteInput = function () {
   navigator.clipboard.readText().then((text) => {
     inputField.value = text;
+    triggerProcess();
   });
 };
