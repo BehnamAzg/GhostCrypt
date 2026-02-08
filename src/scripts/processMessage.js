@@ -15,12 +15,9 @@ let debounceTimer;
 const processMessage = async function () {
   outputDiv.textContent = "";
   charCounter.textContent = "0 Characters";
-  if (inputWarningBadge) inputWarningBadge.classList.add("hidden"); // Reset warning
+  if (inputWarningBadge) inputWarningBadge.classList.add("hidden");
 
-  if (!isPassphraseSet()) {
-    // outputDiv.textContent = "Enter all passphrase parts to begin.";
-    return;
-  }
+  if (!isPassphraseSet()) return;
 
   const message = input.value.trim();
   if (!message) return;
@@ -32,25 +29,21 @@ const processMessage = async function () {
   try {
     let result = "";
 
-    // ... (imports and other parts same as before)
-
     if (mode === "encrypt") {
       const encryptedObj = await encryptMessage(message, password);
       const jsonString = JSON.stringify(encryptedObj);
 
       let toObfuscate = jsonString;
 
-      // base65536 mode does NOT need the base64 wrapper
+      // base65536 - doesn't need base64 wrapper
       if (obfuscation === "base65536") {
-        toObfuscate = jsonString; // raw JSON bytes
+        toObfuscate = jsonString; // raw json bytes
       }
 
-      // Only skip base64 wrapper for emojis mode
+      // only skip base64 wrapper for emojis mode
       if (obfuscation !== "emojis") {
         toObfuscate = btoa(jsonString);
       }
-
-      
 
       result = await obfuscate(toObfuscate, obfuscation);
     } else {
@@ -60,10 +53,10 @@ const processMessage = async function () {
       let jsonString;
 
       if (obfuscation === "emojis") {
-        // For emojis: we expect raw binary → string directly
+        // for emojis - expect raw binary -> string directly
         jsonString = deobfuscated;
       } else {
-        // For all other modes: expect base64
+        // for all other modes - expect base64
         try {
           jsonString = atob(deobfuscated);
         } catch (e) {
@@ -88,7 +81,7 @@ const processMessage = async function () {
   } catch (err) {
     console.error("Processing failed:", err);
     if (inputWarningBadge) inputWarningBadge.classList.remove("hidden");
-    updateCharCounter(""); // Reset counter on error
+    updateCharCounter(""); // reset counter on error
   }
 };
 

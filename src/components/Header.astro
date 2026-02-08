@@ -7,12 +7,12 @@ const { btnAction } = Astro.props;
 <header class="w-full">
   <div class="flex items-center">
     <span class="flex-none mx-1">
-      <svg width="22" height="22" fill="currentColor" class="text-primary">
-        <use href="/icons.svg#icon-ghost"></use>
+      <svg width="24" height="24" fill="currentColor" class="text-primary">
+        <use href="/logo.svg"></use>
       </svg>
     </span>
 
-    <h1 class="flex-1 text-primary text-lg font-bold " data-i18n="app.title">GhostCrypt</h1>
+    <h1 class="flex-1 text-primary text-lg font-bold" data-i18n="app.title">GhostCrypt</h1>
 
     {btnAction === "none" ? <p class="flex items-center text-xs font-semibold text-primary gap-x-1.5"><Icon icon="code" size="16" /><span><span  data-i18n="app.version">Version</span> 1.0.0</span></p> : <IconButton icon="info" text="Info" size="16" action={btnAction} btnClass="btn-xs btn-circle btn-soft btn-primary hover:text-base-100 flex-none " tootipClass="tooltip-bottom" i18n="button.info" />}
   </div>

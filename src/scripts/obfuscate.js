@@ -28,23 +28,17 @@ export const obfuscate = async function (text, type) {
         .join(" "); // Binary as dots
     case "hybrid-english": {
       const words = await getEnWords();
-      if (words.length < 256) {
-        throw new Error("English word list too small for secure encoding (needs at least 256 unique words)");
-      }
       let resultWords = Array.from(binary).map((b) => words[b]);
       result = resultWords.join(" ");
       return result.trim();
     }
     case "hybrid-persian": {
       const words = await getFaWords();
-      if (words.length < 256) {
-        throw new Error("Persian word list too small for secure encoding (needs at least 256 unique words)");
-      }
       let resultWords = Array.from(binary).map((b) => words[b]);
       result = resultWords.join(" ");
       return result.trim();
     }
     default:
-      return text; // Fallback
+      return text;
   }
 };

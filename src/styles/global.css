@@ -74,7 +74,7 @@ html[dir="rtl"] .row {
   flex-direction: row-reverse;
 }
 
-/* Icons that should flip in RTL */
+/* Icons flip in RTL */
 html[dir="rtl"] .icon-arrow-right {
   transform: scaleX(-1);
 }

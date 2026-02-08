@@ -85,21 +85,20 @@ export const pastePassphrase = async function () {
       return;
     }
 
-    // Normalize: treat hyphen as space, collapse multiple spaces
+    // treat hyphen as space, collapse multiple spaces
     const normalized = pastedText.replace(/-/g, " ").replace(/\s+/g, " ").trim();
 
     const words = normalized.split(" ");
 
-    // Validation: exactly 5 non-empty words
+    // validation: exactly 5 non-empty words
     if (words.length !== 5 || words.some((word) => word.length === 0)) {
       showErrorBadge();
       return;
     }
 
-    // Valid → fill all fields
+    // valid -> fill all fields
     passphraseInputs.forEach((field, i) => {
       field.value = words[i];
-      // Trigger input event so your real-time validation / warning badge updates
       field.dispatchEvent(new Event("input", { bubbles: true }));
     });
   } catch (err) {
@@ -111,7 +110,7 @@ export const pastePassphrase = async function () {
 export const setupPassphrasePasteHandling = function () {
   passphraseInputs.forEach((input) => {
     input.addEventListener("paste", async (e) => {
-      e.preventDefault(); // Stop normal paste behavior
+      e.preventDefault();
       pastePassphrase();
     });
   });
@@ -121,7 +120,7 @@ export const generatePassphrase = async function () {
   const words = await getEffWords();
 
   const selectedWords = [];
-  const available = [...words]; // copy to avoid modifying original
+  const available = [...words];
 
   for (let i = 0; i < 5; i++) {
     const randomIndex = Math.floor(Math.random() * available.length);
@@ -129,10 +128,8 @@ export const generatePassphrase = async function () {
     available.splice(randomIndex, 1); // remove used word (no duplicates)
   }
 
-  // Fill the inputs
   passphraseInputs.forEach((input, index) => {
     input.value = selectedWords[index];
-    // Trigger input/change events so your validation & UI updates
     input.dispatchEvent(new Event("input", { bubbles: true }));
     input.dispatchEvent(new Event("change", { bubbles: true }));
   });

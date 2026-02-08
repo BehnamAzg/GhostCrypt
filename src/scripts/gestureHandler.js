@@ -2,14 +2,13 @@ import { navigateTabs } from "./navigateTabs.js";
 
 let touchStartX = 0;
 let touchEndX = 0;
-const SWIPE_THRESHOLD = 60; // minimum pixels to count as swipe
+const SWIPE_THRESHOLD = 60;
 
 const container = document.querySelector("body");
 
-function handleSwipe() {
+const handleSwipe = function () {
   const diffX = touchStartX - touchEndX;
 
-  // Only consider horizontal swipes
   if (Math.abs(diffX) < SWIPE_THRESHOLD) return;
 
   const currentVisible = document.querySelector(".tab-content:not(.hidden)");
@@ -18,21 +17,19 @@ function handleSwipe() {
   const currentId = currentVisible.id;
 
   if (diffX < 0) {
-    // Swiped left → go to next tab
+    // Swiped right
     if (currentId === "homeTab") {
       navigateTabs("settingsTab");
     }
-    // if current is settingsTab → do nothing (or loop to homeTab if you want)
   } else {
-    // Swiped right → go to previous tab
+    // Swiped left
     if (currentId === "settingsTab") {
       navigateTabs("homeTab");
     }
-    // if current is homeTab → do nothing (or loop to settingsTab)
   }
-}
+};
 
-export function initGestureHandler() {
+export const initGestureHandler = function () {
   if (container) {
     container.addEventListener(
       "touchstart",
@@ -53,4 +50,4 @@ export function initGestureHandler() {
   } else {
     console.error("Tab container not found for gesture handling");
   }
-}
+};

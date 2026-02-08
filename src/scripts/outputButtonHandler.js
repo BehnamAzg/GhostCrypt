@@ -14,21 +14,17 @@ export const shareOutput = function () {
   if (!outputField.value?.trim()) return;
 
   const shareData = {
+    title: "Encrypted Message",
     text: outputField.value,
+    url: window.location.href
   };
 
-  // Try native share first (mobile + some desktop environments)
+  // native share
   if (navigator.share) {
     navigator.share(shareData).catch(() => {
-      // If native share fails or is cancelled → silently fall back to copy
-      navigator.clipboard.writeText(output).catch(() => {
-        // Silent failure – no feedback
-      });
+      navigator.clipboard.writeText(outputField.value).catch(() => {});
     });
   } else {
-    // No native share → just copy
-    navigator.clipboard.writeText(output).catch(() => {
-      // Silent failure
-    });
+    navigator.clipboard.writeText(outputField.value).catch(() => {});
   }
 };

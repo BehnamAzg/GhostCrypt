@@ -9,8 +9,8 @@ for (let i = 0; i < 65536; i++) {
   DECODE.set(char, i);
 }
 
-export function base65536Encode(bytes) {
-  let result = '';
+export const base65536Encode = function (bytes) {
+  let result = "";
   let i = 0;
   while (i < bytes.length) {
     const a = bytes[i++];
@@ -19,20 +19,20 @@ export function base65536Encode(bytes) {
     result += ENCODE[value];
   }
   return result;
-}
+};
 
-export function base65536Decode(str) {
+export const base65536Decode = function (str) {
   const bytes = [];
   for (const char of str) {
     const value = DECODE.get(char);
     if (value === undefined) {
       throw new Error(`Invalid Base65536 character: ${char}`);
     }
-    bytes.push((value >> 8) & 0xFF);
-    bytes.push(value & 0xFF);
+    bytes.push((value >> 8) & 0xff);
+    bytes.push(value & 0xff);
   }
   if (bytes.length % 2 !== 0) {
     bytes.pop();
   }
   return new Uint8Array(bytes);
-}
+};

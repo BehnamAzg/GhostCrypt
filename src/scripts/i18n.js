@@ -1,7 +1,7 @@
 let currentLang = localStorage.getItem("lang") || "en";
 let translations = {};
 
-export async function loadLanguage(lang) {
+export const loadLanguage = async function (lang) {
   if (lang === currentLang && Object.keys(translations).length > 0) {
     return;
   }
@@ -20,38 +20,37 @@ export async function loadLanguage(lang) {
     } else {
       document.documentElement.classList.remove("lang-fa");
     }
-
   } catch (err) {
     console.error("Language loading failed:", err);
     translations = (await fetch("/src/locales/en.json")).json();
   }
-}
+};
 
-export function t(key, params = {}) {
+export const t = function (key, params = {}) {
   let text = translations[key] || key;
   for (const [k, v] of Object.entries(params)) {
     text = text.replace(`{${k}}`, v);
   }
   return text;
-}
+};
 
-export function getCurrentLang() {
+export const getCurrentLang = function () {
   return currentLang;
-}
+};
 
-export function updateAllTexts() {
+export const updateAllTexts = function () {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.dataset.i18n;
     el.textContent = t(key);
   });
 
-  // Special case: placeholders
+  // placeholders
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
     const key = el.dataset.i18nPlaceholder;
     el.placeholder = t(key);
   });
 
-  // Special case: tooltips
+  // tooltips
   document.querySelectorAll("[data-i18n-tip]").forEach((el) => {
     const key = el.dataset.i18nTip;
     if (!key) return;
@@ -62,7 +61,7 @@ export function updateAllTexts() {
     }
   });
 
-  // Special case: Aria-labels
+  // aria labels
   document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
     const key = el.dataset.i18nAria;
     if (key) {
@@ -72,17 +71,12 @@ export function updateAllTexts() {
       }
     }
   });
-}
+};
 
-// // Pattern B – direct calls in dynamic parts
-// JavaScriptoutputDiv.textContent = result;
-// charCounter.textContent = `${result.length} ${t('characters')}`;
-
-export function setupLanguageSelector() {
+export const setupLanguageSelector = function () {
   document.getElementById("languageSelect").value = getCurrentLang();
   document.getElementById("languageSelect").addEventListener("change", async (e) => {
     await loadLanguage(e.target.value);
     updateAllTexts();
-    // location.reload();
   });
-}
+};

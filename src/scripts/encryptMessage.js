@@ -10,7 +10,7 @@ export const encryptMessage = async function (message, password) {
     await crypto.subtle.importKey("raw", new TextEncoder().encode(password), { name: "PBKDF2" }, false, ["deriveKey"]),
     { name: "AES-GCM", length: 256 },
     false, // Non-exportable for security
-    ["encrypt", "decrypt"], // Allow decrypt with same key
+    ["encrypt", "decrypt"],
   );
   const encrypted = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, new TextEncoder().encode(message));
   return {
