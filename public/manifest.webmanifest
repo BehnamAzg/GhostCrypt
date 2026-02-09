@@ -26,15 +26,39 @@
   "screenshots": [
     {
       "src": "/screenshots/screenshot-1.png",
-      "sizes": "374x687",
+      "sizes": "458x687",
       "type": "image/png",
       "form_factor": "narrow"
     },
     {
       "src": "/screenshots/screenshot-2.png",
-      "sizes": "340x538",
+      "sizes": "458x687",
       "type": "image/png",
       "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/screenshot-3.png",
+      "sizes": "458x687",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/screenshot-1.png",
+      "sizes": "458x687",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/screenshot-2.png",
+      "sizes": "458x687",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/screenshot-3.png",
+      "sizes": "458x687",
+      "type": "image/png",
+      "form_factor": "wide"
     }
   ]
 }
