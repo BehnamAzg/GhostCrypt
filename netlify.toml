@@ -1,7 +1,28 @@
-[[redirects]] from = "/sw.js" to = "/sw.js" status = 200 force = true
+[[redirects]]
+  from = "/sw.js"
+  to = "/sw.js"
+  status = 200
+  force = true
 
-[[redirects]] from = "/workbox-\*" to = "/workbox-:splat" status = 200 force = true
+[[redirects]]
+  from = "/workbox-*"
+  to = "/workbox-:splat"
+  status = 200
+  force = true
 
-[[redirects]] from = "/\*" to = "/index.html" status = 200
+[[redirects]]
+  from = "/src/*"
+  to = "/src/:splat"
+  status = 200
+  force = true
 
-[[headers]] for = ["/sw.js", "/workbox-*.js"] [headers.values] Cache-Control = "no-cache, no-store, must-revalidate"
+[[redirects]]
+  from = "/_astro/*"
+  to = "/_astro/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
