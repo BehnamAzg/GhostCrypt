@@ -3,7 +3,6 @@ let deferredPrompt = null;
 
 export const checkInstallation = function () {
   window.addEventListener("beforeinstallprompt", (e) => {
-    e.preventDefault();
     deferredPrompt = e;
     installEl.classList.remove("hidden");
     installEl.classList.add("flex");
