@@ -3,6 +3,7 @@ import { openModal } from "./openModal.js";
 import { clearInput, copyInput, pasteInput } from "./inputButtonHandler.js";
 import { clearPassphrase, copyPassphrase, pastePassphrase, generatePassphrase } from "./passphraseButtonHandler.js";
 import { copyOutput, shareOutput } from "./outputButtonHandler.js";
+import { installApp } from './installButton.js';
 
 export const setupButtonHandler = function () {
   document.addEventListener("click", (e) => {
@@ -50,7 +51,7 @@ export const setupButtonHandler = function () {
         shareOutput();
         break;
       case "installApp":
-        console.log("installApp test");
+        installApp();
         break;
       /*
       case "messagesTab":

@@ -3,15 +3,17 @@ import { setupPassphraseValidation, setupPassphrasePasteHandling } from "./passp
 import { setupListeners } from "./listeners.js";
 import { loadLanguage, updateAllTexts, setupLanguageSelector } from "./i18n.js";
 import { initGestureHandler } from "./gestureHandler.js";
+import { checkInstallation } from "./installButton.js";
 
 const init = async function () {
   await loadLanguage(localStorage.getItem("lang") || "en");
   updateAllTexts();
   setupLanguageSelector();
-  initGestureHandler();
   setupButtonHandler();
+  initGestureHandler();
   setupPassphraseValidation();
   setupPassphrasePasteHandling();
   setupListeners();
+  checkInstallation();
 };
 init();

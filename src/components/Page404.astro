@@ -1,0 +1,22 @@
+---
+import Header from "./Header.astro";
+---
+
+<div class="max-w-sm max-sm:w-full h-screen flex-center flex-col justify-between mx-auto gap-4 py-6 max-sm:px-4 select-none relative tab-content">
+  <Header btnAction="none" />
+  <div class="w-full flex-center flex-col gap-6 enter-scale">
+    <svg width="128" height="128" fill="currentColor" class="text-primary">
+      <use href="/logo.svg"></use>
+    </svg>
+    <div class="w-full flex-center flex-col gap-3">
+      <h1 class="text-4xl font-black text-primary">404</h1>
+      <p class="font-semibold">
+        So, you come around here often?
+      </p>
+    </div>
+    <a href="/" target="_self" class="btn btn-sm btn-primary text-base-100">
+      Home
+    </a>
+  </div>
+  <div></div>
+</div>

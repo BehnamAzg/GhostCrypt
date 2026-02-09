@@ -1,10 +1,10 @@
 {
-  "name": "",
+  "name": "ghostcrypt",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && npx workbox generateSW workbox-config.js || true",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -15,6 +15,7 @@
     "theme-change": "^2.5.0"
   },
   "devDependencies": {
-    "daisyui": "^5.5.14"
+    "daisyui": "^5.5.14",
+    "workbox-cli": "^7.4.0"
   }
 }
