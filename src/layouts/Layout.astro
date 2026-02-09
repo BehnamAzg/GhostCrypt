@@ -11,30 +11,32 @@ import "../styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <title>GhostCrypt</title>
-    <script defer type="module" src="/scripts/main.js" is:inline></script>
-    <script defer is:inline>
-      window.addEventListener("load", () => {
-        if ("serviceWorker" in navigator) {
-          navigator.serviceWorker
-            .register("/sw.js", { type: "module" })
-            .then((reg) => {
-              console.log("Service worker registered", reg.scope);
-            })
-            .catch((error) => {
-              console.error("Error registering service worker:");
-              console.warn(error);
-            });
-        }
-      });
-    </script>
   </head>
   <body>
     <slot />
   </body>
 </html>
 
+<script>
+  import "../scripts/main.js";
+
+  window.addEventListener("load", () => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("/sw.js", { type: "module" })
+        .then((reg) => {
+          console.log("Service worker registered", reg.scope);
+        })
+        .catch((error) => {
+          console.error("Error registering service worker:");
+          console.warn(error);
+        });
+    }
+  });
+</script>
+
 <!-- Theme logic - https://github.com/saadeghi/theme-change -->
-<script is:inline>
+<script>
   // ☝️ This script prevent the FART effect.
   if (localStorage.getItem("theme") === null) {
     document.documentElement.setAttribute("data-theme", "light");
