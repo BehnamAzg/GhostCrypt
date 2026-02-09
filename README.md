@@ -20,11 +20,12 @@
 
 [![][license]](https://github.com/BehnamAzg/GhostCrypt/blob/main/LICENSE) [![][version]](https://github.com/BehnamAzg/GhostCrypt/releases) [![][stars]](https://github.com/BehnamAzg/GhostCrypt) [![Support]](https://behnamazg.github.io/donation)
 
-<a href="https://ghostcryptapp.netlify.app/" target="_blank" style="background: #5e81ac; color: #fff; padding: 6px 12px; border-radius: 5px; font-weight: 600;">
-  Open GhostCrypt 👻
-</a>
+[![Open GhostCrypt 👻](https://img.shields.io/badge/Open_GhostCrypt-5e81ac?style=for-the-badge)](https://ghostcryptapp.netlify.app/)
 
-<img src="https://github.com/BehnamAzg/GhostCrypt/raw/main/public/screenshots/screenshot-1.png" style="margin-top: 24px;" alt="App Screenshot">
+<div align="center">
+<img src="https://github.com/BehnamAzg/GhostCrypt/raw/main/public/screenshots/screenshot-1.png" alt="App Screenshot">
+</div>
+<hr>
 
 </div>
 
