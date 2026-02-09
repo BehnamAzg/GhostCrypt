@@ -36,4 +36,6 @@ module.exports = {
   // Makes it a PWA-friendly service worker
   skipWaiting: true,
   clientsClaim: true,
+
+  navigateFallback: '/index.html'
 };
