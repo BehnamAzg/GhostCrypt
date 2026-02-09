@@ -7,7 +7,7 @@ export const loadLanguage = async function (lang) {
   }
 
   try {
-    const response = await fetch(`/src/locales/${lang}.json`);
+    const response = await fetch(new URL(`../locales/${lang}.json`, import.meta.url));
     if (!response.ok) throw new Error(`Failed to load ${lang}`);
     translations = await response.json();
     currentLang = lang;
@@ -22,7 +22,7 @@ export const loadLanguage = async function (lang) {
     }
   } catch (err) {
     console.error("Language loading failed:", err);
-    translations = (await fetch("/src/locales/en.json")).json();
+    translations = (await fetch(new URL("../locales/en.json", import.meta.url))).json();
   }
 };
 
