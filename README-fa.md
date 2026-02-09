@@ -8,11 +8,11 @@
 <div align="center">
     <p>
         <a href="README-fa.md">
-            <small>فارسی</small>
+            <small> فارسی </small>
         </a>
         | 
         <a href="README.md">
-            <small>English</small>
+            <small> English </small>
         </a>
     </p>
 </div>
@@ -22,12 +22,11 @@
 [![][stars]](https://github.com/BehnamAzg/GhostCrypt)
 [![Support]](https://behnamazg.github.io/donation)
 
-<img src="https://github.com/BehnamAzg/GhostCrypt/raw/main/public/screenshots/screenshot-0.png" style="margin-bottom: 24px;" alt="App Screenshot">
-
-<a id="openLink" href="https://ghostcrypt.netlify.app/" target="_blank" style="background: #5e81ac; color: #fff; padding: 6px 12px; border-radius: 5px; font-weight: 600;">
+<a href="https://ghostcryptapp.netlify.app/" target="_blank" style="background: #5e81ac; color: #fff; padding: 6px 12px; border-radius: 5px; font-weight: 600;">
   باز کردن گوست‌کریپت 👻
 </a>
-<hr style="margin-top: 24px;" />
+
+<img src="https://github.com/BehnamAzg/GhostCrypt/raw/main/public/screenshots/screenshot-1.png" style="margin-top: 24px;" alt="App Screenshot">
 </div>
 
 
