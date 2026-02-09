@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && npx workbox generateSW workbox-config.js || true",
+    "build": "astro build && npx workbox generateSW workbox-config.js && cp dist/sw.js dist/sw.js || true",
     "preview": "astro preview",
     "astro": "astro"
   },
