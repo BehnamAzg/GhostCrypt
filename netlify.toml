@@ -1,0 +1,7 @@
+[[redirects]] from = "/sw.js" to = "/sw.js" status = 200 force = true
+
+[[redirects]] from = "/workbox-\*" to = "/workbox-:splat" status = 200 force = true
+
+[[redirects]] from = "/\*" to = "/index.html" status = 200
+
+[[headers]] for = ["/sw.js", "/workbox-*.js"] [headers.values] Cache-Control = "no-cache, no-store, must-revalidate"
