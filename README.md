@@ -18,7 +18,7 @@
     </p>
 </div>
 
-[![][license]](https://github.com/BehnamAzg/GhostCrypt/blob/main/LICENSE) [![][version]](https://github.com/BehnamAzg/GhostCrypt/releases) [![][stars]](https://github.com/BehnamAzg/GhostCrypt) [![Support]](https://behnamazg.github.io/donation)
+[![][license]](https://github.com/BehnamAzg/GhostCrypt/blob/main/LICENSE) [![][version]](https://github.com/BehnamAzg/GhostCrypt/releases) [![][stars]](https://github.com/BehnamAzg/GhostCrypt) [![Support]](https://behnamazg.github.io/Donation)
 
 [![Open GhostCrypt 👻](https://img.shields.io/badge/Open_GhostCrypt-5e81ac?style=for-the-badge)](https://ghostcryptapp.netlify.app/)
 
