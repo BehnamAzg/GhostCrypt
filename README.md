@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://github.com/BehnamAzg/GhostCrypt/raw/main/public/icons/icon.svg" alt="GhostCrypt Icon" width="128">
+<img src="https://github.com/BehnamAzg/GhostCrypt/raw/main/public/icons/icon.svg" alt="GhostCrypt Icon" width="80">
 
 # GhostCrypt
 
